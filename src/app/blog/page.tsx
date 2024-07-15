@@ -1,0 +1,47 @@
+import React from "react";
+import { Image } from "@nextui-org/react";
+import Link from 'next/link'
+import './page.css'
+import listJson from './list.json'
+
+// clip-path
+const RADICAL_3 = 1.7320508;
+export default function App() {
+  const width = 200;
+  const height = 2 * Math.ceil(width / RADICAL_3);
+  const style = { width, height }
+
+  const list = (listJson as any[]).reduce((r, item, index) => {
+    if (index === 0 || index % 4 === 0) r.push([])
+    const lIdx = Math.floor(index / 4)
+    r[lIdx].push((
+      <Link href={`/blog/detail/${item.index}`}>
+        <div className="w-comb relative m-[10px] opacity-60 hover:opacity-100 cursor-pointer" style={style}>
+          <Image
+            alt="Card background"
+            className="object-cover rounded-xl"
+            src={item.imgSrc}
+            width={width}
+            height={height}
+          />
+          <div className="absolute top-20 z-50">
+            <h4 className="font-bold text-large text-center">{item.title}</h4>
+          </div>
+        </div>
+      </Link>
+    )
+    )
+    return r
+  }, [])
+  return (
+    <div className="h-full">
+      <div className="list" >
+        {
+          list.map(i => (
+            <div className="flex">{...i}</div>
+          ))
+        }
+      </div>
+    </div>
+  );
+}
