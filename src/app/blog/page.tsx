@@ -39,8 +39,8 @@ export default function App() {
         <div><span className="text-[#C778DD]">#</span><span className="text-white font-bold">Blog</span></div>
         <div className="list" >
           {
-            list.map(i => (
-              <div className="flex">{...i}</div>
+            list.map((i:any[],index:number) => (
+              <div className="flex" key={index}>{...i}</div>
             ))
           }
         </div>
