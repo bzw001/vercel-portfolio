@@ -12,7 +12,7 @@ id: math-03
 
 > 思路：数组是有序的，可以根据规律减少遍历次数。从右上角开始遍历，如果这个数不等，那么可以根据目标数与这个数的大小可以去掉一些行/列的遍历
 
-```
+```javascript
 function findNumInSortedArray(arr, num) {
   if (!Array.isArray(arr) || typeof num != 'number' || isNaN(num)) {
     return;
@@ -40,7 +40,7 @@ function findNumInSortedArray(arr, num) {
 
 >思路：可以使用正则替换与遍历替换两种方式
 
-```
+```javascript
   //使用正则
   function replaceStr(str){
     if (typeof str !== 'string') {
@@ -76,7 +76,7 @@ function findNumInSortedArray(arr, num) {
 
 >思路：可以将链表翻转，再打印，但会破坏链表的结构。还可以用栈存储节点，然后打印
 
-```
+```javascript
 function displayLinkList(head) {
   let stack = [];
   let node = head;
@@ -95,7 +95,7 @@ function displayLinkList(head) {
 
 >思路：在二叉树的前序遍历中，第一个数字总是树的根节点的值，在中序遍历中，根结点的值在序列的中间。找根节点，确定左右子树，然后递归循环，关键是依次挂载'根'节点（确定其在左还是右）。前序确定根节点，中序确定左右节点
 
-```
+```javascript
 //节点定义
  function TreeNode(ele) {
    this.ele = ele;
@@ -150,7 +150,7 @@ function displayLinkList(head) {
 
   >思路：栈a的数据全部依次放到栈b,那么原先早进入栈a的数据会出现在栈b栈顶的位置， 那么队列的出队，相当于栈b的出栈，队列的入队，相当于栈a的入栈。当栈b为空时，将栈a的数据全部出栈到栈b
 
-```
+```javascript
  let stack_a = [];
  let stack_b = [];
 
@@ -173,7 +173,7 @@ function displayLinkList(head) {
    
    >思路：两个队列，拿一个队列做存储区，有数据的队列依次出队数据到缓存队列，那么当有数据的队列出到最后一个数据时，即是需要出栈的数据。入栈的数据入队到有数据的队列,如果两个为空，任取一个入队
 
-```
+```javascript
  let queue_a = [];
  let queue_b = [];
 
@@ -221,7 +221,7 @@ function displayLinkList(head) {
 
 > 思路：递增有序找最值，可以尝试二分法。数组第一个元素肯定会比最后一个元素大，选择中间元素，与末尾元素比较，如果大于末尾元素则表示最小元素在右区间，否则在左区间
 
-```
+```javascript
 function findMinFromRotateArr(arr) {
   if (!Array.isArray(arr)) {
     return console.error('wrong!')
@@ -245,7 +245,7 @@ function findMinFromRotateArr(arr) {
 
 > 思路：斐波那契数列是一个经典数学题。可以采用递归与循环方式解决，注意递归下，如果n比较大时，会产生很大内存消耗
 
-```
+```javascript
 //递归解法
 function fibonacci(n) {
   if (n <= 0) {
@@ -296,7 +296,7 @@ function fabonacci(n) {
 
   >思路：可以使用右移与位与运算。判断整数的二进制数的最右侧数是不是1(和1与),然后右移，直至为0
 
-```
+```javascript
 //缺陷版：
 //缺陷在于不能针对负数情况。因为带符号的数字，其二进制最高位有一个数字为符号标志，负数为1
 function numOf1(n) {
@@ -350,7 +350,7 @@ function numsOf1(n) {
 
 >思路：解题的第一反应是用for循环累加乘积，但可能忽略一些情况:输入的0值与负整数次幂。还有如何减少遍历次数
 
-```
+```javascript
 function power(base, exponent) {
   if (base == 0 && exponent < 0) {
     return console.error('base should not be 0');
@@ -392,7 +392,7 @@ function power (base, exponent) {
 
 > 思路：常规链表删除，会循环遍历到待删除节点，然后将其前一个节点指向其后一个节点。但是每次删除需要遍历,时间复杂度为O(n)。如果直接将待删除节点的下一个节点的值赋予给待删除节点，然后删除这个下一个节点，不是就相当于删除了么。
 
-```
+```javascript
 function deleteNode(headNode, deleteNode) {
   if (!headNode || !deleteNode) {
     return ;
@@ -427,7 +427,7 @@ function deleteNode(headNode, deleteNode) {
 
 >思路：常规下可以遍历数组，如果数是偶数，可以将数拿出放到数组最后面，其后面的数字前移一位。同时也可以使用两个指针，一个指向数组头p1，一个指向数组尾p2,如果p1指向偶数，p2指向奇数，则双方对调,这样会出现4种情况，依次处理即可。
 
-```
+```javascript
 function reOrderArray(arr)
 {
     // write code here
@@ -464,7 +464,7 @@ function reOrderArray(arr)
 
 > 思路：一般想法可以第一次遍历链表得到其长度，然后倒数第k个节点，那么则是第n+1-k个节点，然后第二次遍历链表即可得出，这样的缺点是需要遍历链表两次。遍历一次链表的做法：取两个指针，一个指针指向头节点，另外一个指针指向第k-1个节点，然后两个指针同时遍历，当第二个指针指向链表尾的时候，那么第一个指针会指向导数第k个节点
 
-```
+```javascript
 //注意边界情况：头结点为空，节点数小于k个，k不大于0
 
 function findKthToTial (head, k) {
@@ -492,7 +492,7 @@ function findKthToTial (head, k) {
 
 > 思路：遍历链表，将下一个节点指向前一个节点
 
-```
+```javascript
 function resverseList(head) {
   if (!head) {
     return null;
@@ -520,7 +520,7 @@ function resverseList(head) {
 
 > 思路：依次去取两个链表的节点进行比较
 
-```
+```javascript
 function mergeLinkList(head1, head2) {
   if (head1 == null) {
     return head2;
@@ -545,7 +545,7 @@ function mergeLinkList(head1, head2) {
 
 > 思路：先找A包含B的根节点，然后根据该节点比较左右子树
 
-```
+```javascript
 //树节点定义
 function Node(ele) {
   this.ele = ele;
@@ -595,7 +595,7 @@ function doesTreeAHaveTreeB(pRootA, pRootB) {
 
 > 思路：进行前序遍历，对于非叶子节点，有两个节点，则将其对换
 
-```
+```javascript
 
 function mirror(root) {
   if (root == null) {
@@ -620,7 +620,7 @@ function mirror(root) {
 
 > 思路：关键在于循环打印的条件在于 列数 > 开始打印的列数x2 ，而且 行数 > 开始打印的行数x2
 
-```
+```javascript
 function printMatrix (arr) {
   if (!Array.isArray(arr)) {
     return;

@@ -5,7 +5,7 @@ id: ang-04
 
 ## 一、模板语法概览
 
-```
+```javascript
 
 //模板的意义在于它是自定义的标准化页面，能够实现页面与数据的结合。有一些标签如script标签是不可以在模板中使用的（防止注入攻击）
 /**
@@ -27,7 +27,7 @@ id: ang-04
 
 ## 二、数据绑定
 
-```
+```javascript
 
 //数据半丁能更加简单快捷给html里面取值与赋值，易于数据的管理与显示
 //Angular下有三种不同数据流动方向的数据绑定方式
@@ -177,7 +177,7 @@ export class ListItemComponent{
 
 ## 三、内置指令
 
-```
+```javascript
 
 //常见内置指令：NgClass,NgStyle,NgIf,NgFor,NgSwitch
 

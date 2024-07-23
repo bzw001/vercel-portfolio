@@ -5,7 +5,7 @@ id: react-05
 
 ## diff算法的演化历史
 
-```
+```javascript
 
 /**
  * 由于React.js, React-Dom.js, immutable.js,redux.redux-react.react-router等弄在一块导致包很大

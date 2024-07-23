@@ -13,7 +13,7 @@ id: design-03
    - 给发布者添加一个缓存列表，用于存放回调函数以便通知订阅者
    - 最后发布消息时，发布者会遍历缓存列表，依次触发里面的订阅者回调函数
    
-   ```
+   ```javascript
   var salesOffices = {};
   salesOffices.clientList = [];
   salesOffices.listen = function(fn) {
@@ -29,7 +29,7 @@ id: design-03
 
    - 发布-订阅模式的通用实现
 
-   ```
+   ```javascript
     var event = {
       clientList: {},
       listen: function(key, fn) {
@@ -111,7 +111,7 @@ id: design-03
  + 对象池
  > 对于创建过的对象进行循环利用
  
- ```
+ ```javascript
  //通用对象池实现
  var objectPoolFactory = function(createObjFn) {
    var objectPool = [];
@@ -134,7 +134,7 @@ id: design-03
 > 优势： 请求者只需要知道一个处理链中的一个节点，并不需要知道真正的处理者，从而弱化发送者与接收者的强联系。
 > 无论是作用域链，原型链，还是DOM节点中的事件冒泡，都可找到职责链模式的影子
 
-```
+```javascript
   //一个支付定金购买的例子
   //正式购买后：
   a、已经支付过500元定金的用户，收到100元的优惠券
@@ -240,7 +240,7 @@ id: design-03
 + 异步的职责链
 > 在节点函数中能进行异步请求,在职责链的节点行进依赖于异步请求的结果
 
-```
+```javascript
  // 增加next方法，需要手动的传递请求给职责链的下一个节点
 
  Chain.prototype.next = function() {
@@ -255,7 +255,7 @@ id: design-03
 > 中介者模式是迎合迪米特法则（最少知识原则，一个对象应该尽少了解另外的对象）的一种实现。
 >本身中介者的维护也是存在一定代价的，当程序的维护或者调用困难主要是对象间的高耦合度造成，可以试试中介者模式
 
-```
+```javascript
 
 
 //中介者模式, 实现常见游戏玩家/团队对决的决胜关系

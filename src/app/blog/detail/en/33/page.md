@@ -10,7 +10,7 @@ id: vue-02
 
 - 实现一个Vnode
 > 创建一个简单的VNode类, 包含一些基本属性
-```
+```javascript
     class VNode {
         constructor (tag, data, children, text, elm) {
             //节点标签名
@@ -28,7 +28,7 @@ id: vue-02
 ```
 
 - 一个简单vue组件下的VNode
-```
+```javascript
     //简单组件
     <template>
         <span class="demo" v-show="isShow">
@@ -87,7 +87,7 @@ id: vue-02
 - 对VNode节点进行一些分装
 > 分别形成创建空节点， 创建文本节点， 克隆VNode节点
 
-``` 
+``` javascript
     //创建空节点
     function createEmptyVnode () {
         const node = new VNode();

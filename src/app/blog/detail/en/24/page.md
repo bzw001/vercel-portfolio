@@ -27,7 +27,7 @@ id: gitlab-02
 
 
 ## 命令
-```
+```javascript
 	runner:
 	gitlab-runner register  注册runner
 		
@@ -49,7 +49,7 @@ id: gitlab-02
 ```
 
 ## ubuntu server下gitlabci环境的配置
-```
+```javascript
 	版本:ubuntu-16.04.2-server-amd64.iso
 	1、设置网络
 	2、安装vim
@@ -98,7 +98,7 @@ id: gitlab-02
 
 ## 实现方法
 
-```
+```javascript
    注意事项:
        1、设置共享文件夹，在使用webpack的文件夹及下面文件，设置其他用户组用户可读可写可操作的权限。
 ```

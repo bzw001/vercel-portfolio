@@ -12,7 +12,7 @@ id: vue-03
 
 > 能够描述出标签的属性以及依赖关系
 
-```
+```javascript
  //得到的AST示例
  {
      //标签属性的map，记录标签上属性
@@ -58,7 +58,7 @@ id: vue-03
  }
 ```
 - 定义正则
-```
+```javascript
     const ncname = '[a-zA-Z][\\w\\-\\.]*';
     const singleAttrIndentifer = /([^\s"'<>/=]+)/
     const singleAttrAssign = /(?:=)/
@@ -87,7 +87,7 @@ id: vue-03
 - advance
 > 解析template采用循环进行字符串匹配的方式，每次匹配解析玩一段，就会将匹配掉的去掉。头部指针会指向接下来需要匹配的部分
 
-```
+```javascript
     function advance (n) {
         index += n;
         html = html.subString(n);
@@ -96,7 +96,7 @@ id: vue-03
 
 - parseHTML
 > 循环解析template字符串,使用正则匹配到标签头，标签尾以及文本的时候进行不同处理，直到整个template解析完毕
-```
+```javascript
     function parseHTML () {
         while(html) {
             let textEnd = html.indexOf('<');
@@ -121,7 +121,7 @@ id: vue-03
 - parseStartTag
 > 解析起始标签
 
-```
+```javascript
     //以 "<div :class="c" class="demo" v-if="isShow">"部分
 
     function parseStartTag () {
@@ -159,7 +159,7 @@ id: vue-03
 > 维护一个stack栈来保存已经解析号的标签头，这样解析尾标签的时候可以得到层级关系以及父标签。
 > 定义一个currentParent变量来存放当前标签父标签节点的引用，root变量指向根节点标签
 
-```
+```javascript
     //在startTagOpen 的if逻辑加上额外处理
     //将startTagMatch 结果封装成element.这个会是最终的AST节点。 标签节点type为1
     if (html.match( startTagOpen)) {
@@ -193,7 +193,7 @@ id: vue-03
 > 用来解析为标签，会从stack中取出最近的与自己标签名一直的元素，将currentParent指向该元素，同时将该元素前面的元素出栈
 > 由于存在自闭合标签如<br />，没有完整闭合标签的情况，所有要找最近一个标签名同名的，而不是第一个出栈的元素
 
-```
+```javascript
     function parseEndTag (tagName) {
         let pos;
         for (pos = stack.length - 1; pos >=0 ;pos--) {
@@ -214,7 +214,7 @@ id: vue-03
  - 普通文本： 直接构建一个节点push进当前的currentParent的children即可
  - 带表达式的文本; 需要parseText 来将表达式转化成代码
 
- ```
+ ```javascript
     var text = html.substring(0, textEnd);
     advance(textEnd)
     let expression;
@@ -270,7 +270,7 @@ id: vue-03
 
  - 如何解析v-if, v-for这样的表达式的呢？ professIf与 professFor
  > 只需要在解析头标签的内容加入这两个表达式的解析函数即可。
- ```
+ ```javascript
     if (html.match(startTagOpen)) {
 			const startTagMatch = parseStartTag();
 			const element = {
@@ -341,7 +341,7 @@ id: vue-03
  - optimize 
 > 优化。 给静态节点加上static 属性，那么在patch时bianhui9跳过这些标记的节点的比对
 
-```
+```javascript
 //optimize后的结果
 {
 	attrsMap: {
@@ -431,7 +431,7 @@ function optimize(rootAst) {
 -  generate
 > 将AST 转换成render function 字符串, 最终得到render字符串以及staticRenderFns字符串
 
-```
+```javascript
 	//vue.js编译后的结果
 	with(this) {
 		return (isShow) ? 

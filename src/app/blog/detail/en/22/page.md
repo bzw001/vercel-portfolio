@@ -5,7 +5,7 @@ id: ang-05
 
 ## 四、表单
 
-```
+```javascript
 //可以通过模板驱动与模型驱动构建表单
 //模板驱动使用内置指令，内置校验
 //模型驱动通过自定义表单，自定义校验
@@ -187,7 +187,7 @@ let test6=`
 
 ## 五、管道
 
-```
+```javascript
 //1、可以使用:添加参数
 //<p>date is {{data:"MM/dd/y"}}</p>
 
@@ -247,7 +247,7 @@ let test6=`
 
 ### 六、安全判断
 
-```
+```javascript
 /**
  * 1、使用?.符号来规避对象undefined或null的报错
  * 以前:<p>{{detail&&detail.name}}</p>

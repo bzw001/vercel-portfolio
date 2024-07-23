@@ -58,7 +58,7 @@ id: design-01
     - 延续局部变量的寿命
     > 如img对象用于数据上报，
 
-    ```
+    ```javascript
     //直接使用局部变量可能会导致数据的丢失，因为img在还没来得及发起http请求便销毁了
       var report = function (src) {
         var img = new Image();
@@ -93,7 +93,7 @@ id: design-01
 + 高阶函数实现AOP(面向切面编程)
 > AOP作用在于把一些核心业务逻辑模块无关的功能抽离出来，比如日志统计，安全控制等。这些功能抽离后，再通过'动态植入'的方式渗入到业务逻辑模块中，从而保持业务逻辑模块的高内聚性。
 > 在js中实现AOP，指将一个函数“动态植入”到另一个函数中
-```
+```javascript
    Function.prototype.before = function(beforefn){
      var _self = this;
      return function() {
@@ -129,7 +129,7 @@ id: design-01
     - 函数柯里化(又叫部分求值)
     > 一个currying函数先接受一部分参数，接受参数后函数不会立即求值，而是返回另一个函数，会将传入的参数在函数形成的闭包中被保存起来。当函数被真正需求求值的时候，之前传入的参数才会被一次性用于求值
 
-  ```
+  ```javascript
     //闭包缓存参数，当需要求值时，一起计算
     //例，计算月底花的钱数
     var currying = function(fn) {
@@ -162,7 +162,7 @@ id: design-01
 
   + uncurrying
   >扩大函数的适用性，使本来属于特定对象的功能可以给其它对象使用
-  ```
+  ```javascript
   Function.prototype.uncurrying = function() {
     var self = this;
     return function(){

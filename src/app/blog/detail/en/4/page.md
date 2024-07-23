@@ -1,4 +1,4 @@
-# es6-05 - Extension of Objects (Supplemental)
+# Extension of Objects (Supplemental)
 
 + 1. A concise representation of attributes
 

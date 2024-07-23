@@ -10,7 +10,7 @@ id: design-02
 + 透明的单例模式
 > 用户从这个类创建对象的时候，可以想用其它任何普通类一样
 
-```
+```javascript
 var CreateDiv = (function(){
   var instance ;
   var CreateDiv = function(html){
@@ -34,7 +34,7 @@ var CreateDiv = (function(){
 + 用代理实现单例模式
 > 通过引入代理类的方式
 
-```
+```javascript
   //将负责管理单例的代码移除，弄一个普通的创建div的类
   var CreateDiv = function(html) {
     this.html = html;
@@ -68,7 +68,7 @@ var CreateDiv = (function(){
 + 惰性单例
 > 在需要的时候才创建对象实例，惰性实例是单例模式的重点
 
-```
+```javascript
  //如在调用Singleton.getInstance的时候才创建
  Singleton.getInstance = (function() {
    var instance = null;
@@ -84,7 +84,7 @@ var CreateDiv = (function(){
  - 通用的惰性单例
  > 将管理单例的逻辑抽象出来：用一个变量来标志是否创建过对象
 
- ```
+ ```javascript
  var getSingle = function(fn) {
    var result;
    return function() {
@@ -101,7 +101,7 @@ var CreateDiv = (function(){
  > 定义一系列的算法，将它们封装，并且使它们可以相互替换
  > 一个基于策略模式的程序至少由两部分组成：第一部分是策略类，封装了具体算法，负责具体的计算过程，第二部分是环境类Context，Context接受客户的请求，然后将请求委托给某一个策略类。
 
- ```
+ ```javascript
   //传统面向对象语言实现会先使用定义类再实现计算类与策略类
 
   //js中策略模式, 策略往往被函数代替
@@ -141,7 +141,7 @@ var CreateDiv = (function(){
   > 当大的图片加载时，会先用一个loading图片占位，然后用异步方式加载图片好之后再填充到img节点里。
   > 对于上述场景可以使用虚拟代理
 
-  ```
+  ```javascript
   //通过代理对象，在图片真正加载好之前，页面会出现一张占位的loading.gif提示图片正在加载
   var myImage = (function() {
     var imgNode = document.createElement('img');
@@ -179,7 +179,7 @@ var CreateDiv = (function(){
   + 内部迭代器与外部迭代器
   >内部迭代器例如forEach函数
 
-  ```
+  ```javascript
   //外部迭代器举例
 
   var Iterator = function(obj) {

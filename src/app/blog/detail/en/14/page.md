@@ -4,7 +4,7 @@ id: ang-02
 ---
 
 ## 三、组件与模块的交互
-```
+```javascript
 //模块包含组件，指令，路由，服务
 
 //模块的构成
@@ -62,7 +62,7 @@ import {aModule} from './a.module';
 
 ## 四、父子组件的交互
 
-```
+```javascript
 //组件数据的流入流出是根据输入与输出语法来处理的
 /**
  * 1、类中使用@Input ,@Output
@@ -258,7 +258,7 @@ export class CollectionComponent{
 
 ## 五、组件内容嵌入
 
-```
+```javascript
 //组件内容嵌入能方便代码的复用
 //内容嵌入用来创建可复用的组件，如模态对话框与导航栏
 //需要使用ng-content
@@ -300,7 +300,7 @@ export class ContainerComponent{}
 
 ## 六、组件的生命周期
 
-```
+```javascript
 //组件生命的各个阶段都有相应的钩子函数可调用，从创建，渲染，数据变动事件触发，再到组件被移除
 
 //生命周期钩子的使用：

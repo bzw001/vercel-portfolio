@@ -10,7 +10,7 @@ id: vue-05
 
 - 先实现一个订阅者Dep
 > 用来存放watcher观察者对象
-```
+```javascript
     class Dep {
         constructor () {
             //存放watcher对象的数组
@@ -30,7 +30,7 @@ id: vue-05
 ```
 
 - 再实现一个观察者watcher
-```
+```javascript
     class Watcher() {
         contructor () {
             // new 一个watcher对象时赋值给Dep.target。再get中会用到
@@ -46,7 +46,7 @@ id: vue-05
 - 开始依赖收集了
 >什么时机触发收集(当对象被读的时候)，收集放到哪里去（放到Dep中），收集干嘛（数据被写的时候，会通知Dep的notify去调相应的处理函数）？
 
-```
+```javascript
   实现： 增加一个Dep类对象，当对象被读的时候，将watcher对象推入，当对象被写的时候Dep进行notify,然后watcher会执行update
 
   function defineReactive (obj, key, val) {

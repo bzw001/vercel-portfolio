@@ -5,7 +5,7 @@ id: ang-01
 
 ## 一、创建组件的基本方法
 
-```
+```javascript
 /**
  * 创建组件的三种步骤
  * 1、从@angular/core中引入Component装饰器
@@ -171,7 +171,7 @@ let showDom=`
 
 ## 二、如何启动一个组件
 
-```
+```javascript
 //一个组件启动，需要有一个根模块
 
 //需要启动的组件

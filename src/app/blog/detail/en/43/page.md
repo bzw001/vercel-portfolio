@@ -5,7 +5,7 @@ id: react-01
 ---
 
 ## renderProps模式
-```
+```javascript
 /**
  * render props
  * 让React组件的props支持函数这种模式，作为props传入的函数往往被用来渲染一部分界面

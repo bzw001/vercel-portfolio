@@ -13,7 +13,7 @@ id: vue-06
 
   > 执行顺序：一整段script相当于宏任务，如果里面有其它setTimeout等宏任务触发，便会在其异步场景完成后(如定时完成)推入到宏任务队列。有promise等微任务，则会将其推入到微任务队列，当前的宏任务执行完之后，会去读取微任务队列执行完，接下来进行读取宏任务队列。从这种顺序看来，微任务往往执行于一次事件循环结束，而宏任务执行于下一次事件循环开始。所以promise的执行往往先于setTimeout。
 
-  ```
+  ```javascript
    例：
       let p =  Promise.resolve();
       p.then(()=> {
@@ -33,7 +33,7 @@ id: vue-06
 
 > vue表明默认使用microTask，特殊下可以使用macroTask
 
-```
+```javascript
 From vue version : "2.5.17-beta.0"
 
 // Here we have async deferring wrappers using both microtasks and (macro) tasks.
@@ -48,7 +48,7 @@ From vue version : "2.5.17-beta.0"
 ```
 ## nextTick的实现
 
-```
+```javascript
   //1、声明macroTask, macroToask, callbasks, useMacroTask等,
   //2、各种环境侦测下建立宏任务与微任务
      第一轮侦测:
@@ -63,7 +63,7 @@ From vue version : "2.5.17-beta.0"
   //4、暴露nextTick：可以将回调推入微/宏任务等待执行。
 ```
 
-```
+```javascript
 附：vue中nextTick源码
 
 const callbacks = []

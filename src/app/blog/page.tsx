@@ -19,12 +19,12 @@ export default function App() {
         <div className="w-comb relative m-[10px] opacity-60 hover:opacity-100 cursor-pointer" style={style}>
           <Image
             alt="Card background"
-            className="object-cover rounded-xl h-[230px]"
-            src={`/assets/imgs/${index+ 1}.jpg`}
+            className="rounded-xl h-[230px]"
+            src={item.imgSrc}
             width={width}
             height={height}
           />
-          <div className="absolute top-20 z-50">
+          <div className="absolute top-20 z-50 w-[100%]">
             <h4 className="font-bold text-large text-center text-white">{item.title}</h4>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function App() {
     return r
   }, [])
   return (
-    <div className=" bg-[#282C33] flex justify-center">
+    <div className=" bg-[#121212] flex justify-center">
       <div>
         <div><span className="text-[#C778DD]">#</span><span className="text-white font-bold">Blog</span></div>
         <div className="list" >

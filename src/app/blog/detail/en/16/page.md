@@ -6,7 +6,7 @@ id: ang-03
 
 ## angular的变化监测
 
-```
+```javascript
 
 //Angular下的监测方式在于适当的时机去检测，不是定时轮询，它什么时候被驱动去监测，由NgZone服务负责
 

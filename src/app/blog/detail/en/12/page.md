@@ -7,7 +7,7 @@ id: test-01
 
 ## 2、细则套件,使用describe
 
-```
+```javascript
     jasmine套件的核心部分是describe函数。这是一个全局函数
     describe('字符串',func);//第一个字符串是待建立的细则套件名称，而函数封装了测试套件
     例:
@@ -24,7 +24,7 @@ id: test-01
 
 ## 3、如何定义一个细则,使用it
 
-```
+```javascript
     使用it()函数定义细则,也是一个全局函数
     it("细则的标题与描述",function(){用于测试代码功能的预期})
     细则里的预期评估为true为false，只要没有false就是成功。
@@ -39,7 +39,7 @@ id: test-01
 
 ## 4 使用expect来建立预期
 
-```
+```javascript
     expect(真实值);
     建立预期，需要串联一个带单只参数的匹配器函数，这个参数就是期望值
     匹配器函数实现真实值与期望值的比较.
@@ -58,7 +58,7 @@ id: test-01
 
 ## 5、jasmine自带的匹配器
 
-```
+```javascript
     1、toBe
     使用===来比较值
     describe(" a spec suite",function(){
@@ -116,7 +116,7 @@ id: test-01
 
 ## 6、一些特殊要求
 
-```
+```javascript
     1、beforeEach方法在每一个细则运行前调用一次,而afterEach()则相反
     describe("a spec suite",function(){
         var message;

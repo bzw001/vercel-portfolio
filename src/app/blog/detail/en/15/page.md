@@ -5,7 +5,7 @@ id: ang-08
 
 ## 一、angular服务概述
 
-```
+```javascript
 //服务用于帮助开发者书写可重用的公共功能
 /**
  * angular服务的一般作用：
@@ -56,7 +56,7 @@ id: ang-08
 
 ## 二、HTTP服务
 
-```
+```javascript
 //HTTP服务支持AJAX与JSOP，支持promise，但推荐使用Observable处理异步操作。http请求会返回observeble对象
 
 //针对请求前，请求中，请求后的一些定义场景，如添加统一头部，加载动画等

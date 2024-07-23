@@ -5,7 +5,7 @@ id: ang-07
 
 ## 一、依赖注入概述
 
-```
+```javascript
 //依赖注入能够在应用时替换依赖对象，而不是编译时
 /**
  * 1、如何在组件，服务，模块注入服务
@@ -132,7 +132,7 @@ export class ContactService{
 
 ## 二、provider及扩展
 
-```
+```javascript
 //provider能够实现逻辑或者数据操作的封装，以接口方式提供给调用方使用。在前后台都有使用
 //对于angular来讲，provider说明了运行时的所需依赖，注入器根据它来创建服务对象的实例
 
